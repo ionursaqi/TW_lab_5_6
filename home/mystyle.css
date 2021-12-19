@@ -1,0 +1,229 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing:content-box;
+}
+
+.msg{
+    border:2px solid #50394c;
+    border-radius: 2px;
+    padding: 4px;
+    text-align: center;
+}
+
+nav{
+    background:#50394c;
+    color: whitesmoke;
+    border-radius: 0px 0px 5px 5px;
+    display: flex;
+    justify-content: space-between;
+}
+nav .mainMenu{
+    display: flex;
+    list-style: none;
+}
+nav .mainMenu li a{
+    display:inline-block;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: whitesmoke;
+    font-size: 1.2rem;
+}
+nav .mainMenu li a:hover{
+    background: #b2b2b2;
+    color: #50394c;
+
+}
+nav .openMenu {
+    font-size: 2rem;
+    margin: 10px;
+    display: none;
+    cursor: pointer;
+
+}
+nav .mainMenu .closeMenu{
+    font-size: 2rem;
+    display: none;
+    cursor: pointer;
+}
+nav .logo{
+    margin: 6px;
+    font-size: 25px;
+    cursor: pointer;
+}
+body{
+    background: rgb(255, 234, 43);
+    margin: 0px 65px 0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+.body1{
+    display: flex;
+    height: fit-content ;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.container{
+    max-width: 650px;
+    width: 90%;
+    background-color: whitesmoke;
+    padding: 25px 30px;
+    border-radius: 5px;
+    border: 7px solid #50394c;
+    position: center;
+}
+.container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: center;
+}
+.container .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: #ffef96;
+}
+.container form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: calc(100%/2 - 20px);
+}
+.user-details .input-box .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom:  5px;
+}
+.user-details .input-box input{
+    height: 45px;
+    width: 90%;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #b2b2b2;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+    border-color: #50394c;
+}
+form .gender-details .gender-title{
+    font-size: 20px;
+    font-weight: 500;
+}
+form .gender-details .category{
+    display: flex;
+    width: 80%;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+.gender-details .category label{
+    display: flex;
+    align-items: center;
+}
+.gender-details .category .dot{
+    height: 14px;
+    width: 14px;
+    background: lightgray;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 3.5px solid transparent
+}
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three{
+    border-color: lightgray ;
+    background: #50394c;
+}
+form input[type="radio"]{
+    display: none;
+}
+form .button{
+    height: 45px;
+    margin: 45px 0;
+}
+form .button input{
+    height:  100%;
+    width: 100%;
+    outline: none;
+    color: whitesmoke;
+    border: 4px ;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1;
+    border-radius: 5px;
+    background: #50394c;
+}
+form .button input:hover{
+    color: #50394c;
+    background: whitesmoke;
+    border: 2px solid #50394c;
+    transition: all 0.3s ease;
+}
+@media(max-width: 700px){
+    .body1{
+        height: fit-content;
+    }
+    nav .mainMenu{
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background:#50394c;
+        transition: top 1s ease;
+        display: none;
+    }
+    nav .mainMenu .closeMenu{
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    nav .openMenu{
+        display: block;
+    }
+    nav .mainMenu li a:hover{
+        background: none;
+        color: #b2b2b2;
+        font-size: 1.6rem;
+    }
+    .container{
+        max-width: 700px;
+    }
+    form .user-details .input-box{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    form .gender-details .category{
+        width: 100%;
+    }
+    .container form .user-details{
+        max-height: 350px;
+        overflow-y: scroll;
+    }
+    .user-details::-webkit-scrollbar{
+        width: 0;
+    }
+}
+
+
+
